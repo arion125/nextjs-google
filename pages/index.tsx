@@ -1,6 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Header from "../components/Header";
+import { MicrophoneIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +14,27 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <form className="flex items-center flex-col mt-40 max-w-xl m-auto gap-6">
+        <Image
+          src={"/images/google-logo.png"}
+          width={300}
+          height={100}
+          objectFit="cover"
+          alt="Google Logo"
+        />
+        <div className="flex border border-solid border-gray-400 rounded-full items-center px-3 h-12 w-full max-w-[90%] hover:shadow-md focus-within:shadow-md">
+          <MagnifyingGlassIcon className="h-5 text-gray-500" />
+          <input
+            type="text"
+            className="focus:outline-none text-base flex-grow pl-2"
+          />
+          <MicrophoneIcon className="h-5" />
+        </div>
+        <div className="flex gap-5">
+          <button className="button">Google Search</button>
+          <button className="button">I'm feeling lucky</button>
+        </div>
+      </form>
     </div>
   );
 };
