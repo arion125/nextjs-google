@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/Header";
 import { MicrophoneIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
           <MagnifyingGlassIcon className="h-5 text-gray-500" />
           <input
             type="text"
-            className="focus:outline-none text-base flex-grow pl-2"
+            className="focus:outline-none text-base flex-grow px-2 font-normal"
           />
           <MicrophoneIcon className="h-5" />
         </div>
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
           <button className="button">I'm feeling lucky</button>
         </div>
       </form>
+      <Footer />
     </div>
   );
 };
