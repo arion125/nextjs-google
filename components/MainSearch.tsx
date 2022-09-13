@@ -2,14 +2,14 @@
 import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useRef } from "react";
+import { MouseEvent, useRef } from "react";
 
 const MainSearch = () => {
   const router = useRouter();
   const searchInputRef = useRef<HTMLInputElement>(null);
 
-  const search = (e: Event) => {
-    e.preventDefault();
+  const search = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     const term = searchInputRef.current?.value;
     if (!term?.trim()) return;
     router.push(`/search?term=${term.trim()}`);
@@ -24,7 +24,7 @@ const MainSearch = () => {
         objectFit="cover"
         alt="Google Logo"
       />
-      <div className="flex border border-solid border-gray-400 rounded-full items-center px-3 h-12 w-full max-w-[90%] hover:shadow-md focus-within:shadow-md">
+      <div className="flex border border-solid border-gray-200 rounded-full items-center px-3 h-12 w-full max-w-[90%] hover:shadow-md focus-within:shadow-md">
         <MagnifyingGlassIcon className="h-5 text-gray-500" />
         <input
           ref={searchInputRef}
