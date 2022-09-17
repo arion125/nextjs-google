@@ -27,7 +27,7 @@ const Header = ({ section }: Props) => {
   switch (section) {
     case "search":
       return (
-        <header className="sticky top-0 w-full bg-white h-20 text-gray-700 text-sm font-normal">
+        <header className="sticky top-0 w-full pt-4 bg-white h-auto text-gray-700 text-sm font-normal">
           <div className="w-full flex justify-between items-center gap-4 h-full pr-4 pl-4">
             <div className="flex gap-6 flex-grow max-w-xl">
               <Image

@@ -1,6 +1,8 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Header from "../components/Header";
+import SearchResults from "../components/SearchResults";
 import Response from "../Response";
 
 type Props = {
@@ -9,13 +11,16 @@ type Props = {
 
 const Search = (props: Props) => {
   console.log(props.results);
+  const router = useRouter();
   return (
     <>
       <Head>
-        <title>Search Page</title>
+        <title>{router.query.term} - Search page</title>
       </Head>
 
       <Header section="search" />
+
+      <SearchResults results={props.results} />
     </>
   );
 };
