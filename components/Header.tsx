@@ -8,6 +8,7 @@ import {
 import { useRouter } from "next/router";
 import { MouseEvent, useRef } from "react";
 import SearchHeaderOptions from "./SearchHeaderOptions";
+import Link from "next/link";
 
 type Props = {
   section?: string;
@@ -70,12 +71,30 @@ const Header = ({ section }: Props) => {
       return (
         <header className="h-20 text-gray-700 flex justify-between pr-4 pl-4 items-center text-sm font-normal">
           <div className="flex gap-4 items-center">
-            <p className="link">About</p>
-            <p className="link">Store</p>
+            <Link href="https://about.google/">
+              <a className="link">About</a>
+            </Link>
+            <Link href="https://store.google.com/">
+              <a className="link">Store</a>
+            </Link>
           </div>
           <div className="flex gap-4 items-center">
-            <p className="link">Gmail</p>
-            <p className="link">Images</p>
+            <Link href="https://mail.google.com/">
+              <a className="link">Gmail</a>
+            </Link>
+
+            <a
+              onClick={() =>
+                router.push(
+                  `/search?term=${
+                    router.query.term || "google"
+                  }&searchType=image`
+                )
+              }
+              className="link"
+            >
+              Images
+            </a>
             <User />
           </div>
         </header>
