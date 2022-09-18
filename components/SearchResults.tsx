@@ -1,4 +1,5 @@
 import parse from "html-react-parser";
+import PaginationButtons from "./PaginationButtons";
 
 type Props = {
   results: any;
@@ -33,7 +34,7 @@ const SearchResults = (props: Props) => {
         return (
           <div key={item.link} className="mb-8 space-y-1">
             <div className="group w-fit">
-              <a href="{item.link}" className="text-sm truncate w-fit">
+              <a href={item.link} className="text-sm truncate w-fit">
                 {item.formattedUrl}
               </a>
               <a href={item.link}>
@@ -46,6 +47,7 @@ const SearchResults = (props: Props) => {
           </div>
         );
       })}
+      <PaginationButtons />
     </div>
   );
 };
