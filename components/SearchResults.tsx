@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import parse from "html-react-parser";
 import PaginationButtons from "./PaginationButtons";
 
